@@ -20,12 +20,14 @@ class SendMessage extends Component {
         });
     };
 
-    handleSubmit = () => {
+    handleSubmit = (event) => {
         this.props.postMessage(this.props.username, this.state.message);
 
-        this.setState({
+        this.setState(() => ({
             message: ''
-        });
+        }));
+
+        event.preventDefault();
     };
 
     render() {
